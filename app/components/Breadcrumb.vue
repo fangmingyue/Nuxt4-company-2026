@@ -69,16 +69,20 @@ const breadcrumbList = computed(() => {
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.breadcrumb
-  Icon(name="mdi:home" size="18" style="margin-right: 4px; color:#aaa" )
-  el-breadcrumb(separator="/")
-    //- v-for 渲染麵包屑
-    el-breadcrumb-item(
-      v-for="(item, index) in breadcrumbList"
-      :key="item.path"
-      :to="index < breadcrumbList.length - 1 ? { path: item.path } : undefined"
-    ) {{ item.name }}
+<template>
+  <div class="breadcrumb">
+    <Icon name="mdi:home" size="18" style="margin-right: 4px; color: #aaa" />
+
+    <el-breadcrumb separator="/">
+      <el-breadcrumb-item
+        v-for="(item, index) in breadcrumbList"
+        :key="item.path"
+        :to="index < breadcrumbList.length - 1 ? { path: item.path } : undefined"
+      >
+        {{ item.name }}
+      </el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
 </template>
 
 <style lang="scss" scoped>

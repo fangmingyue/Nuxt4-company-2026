@@ -20,9 +20,10 @@
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  .demo.container
-    div 動態載入的頁面
+<template>
+  <div class="demo container">
+    <div>動態載入的頁面</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

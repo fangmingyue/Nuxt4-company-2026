@@ -2,7 +2,7 @@
 // 方法
 
 // 組件
-import PageLoading from "@/components/common/PageLoading.vue";
+import PageLoading from "@/components/PageLoading.vue";
 // !實例化 --------------------------------------------------------------------------------------------
 
 // !資料 --------------------------------------------------------------------------------------------
@@ -20,10 +20,11 @@ import PageLoading from "@/components/common/PageLoading.vue";
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.blank
-  PageLoading
-  slot
+<template>
+  <div class="blank">
+    <PageLoading />
+    <slot></slot>
+  </div>
 </template>
 
 <style lang="scss" scoped>

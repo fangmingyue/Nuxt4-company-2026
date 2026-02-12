@@ -2,7 +2,7 @@
 // 方法
 
 // 組件
-import PageLoading from "@/components/common/PageLoading.vue";
+import PageLoading from "@/components/PageLoading.vue";
 import Header from "@/components/layouts/header/HeaderComponent.vue";
 import Footer from "@/components/layouts/footer/FooterComponent.vue";
 // !實例化 --------------------------------------------------------------------------------------------
@@ -22,12 +22,13 @@ import Footer from "@/components/layouts/footer/FooterComponent.vue";
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.layout-default
-  PageLoading
-  Header
-  slot 
-  Footer
+<template>
+  <div class="layout-default">
+    <PageLoading />
+    <Header />
+    <slot></slot>
+    <Footer />
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -92,13 +92,14 @@ const tableData = [
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  el-table(:data="tableData" border style="width:100%")
-    el-table-column(prop="instruction" label="指令" width="180")
-    el-table-column(prop="function" label="效果" width="180")
-    el-table-column(prop="action" label="預設行為" width="140")
-    el-table-column(prop="key" label="可選參數" width="260")
-    el-table-column(prop="note" label="使用方法")
+<template>
+  <el-table :data="tableData" border style="width: 100%">
+    <el-table-column prop="instruction" label="指令" width="180"></el-table-column>
+    <el-table-column prop="function" label="效果" width="180"></el-table-column>
+    <el-table-column prop="action" label="預設行為" width="140"></el-table-column>
+    <el-table-column prop="key" label="可選參數" width="260"></el-table-column>
+    <el-table-column prop="note" label="使用方法"></el-table-column>
+  </el-table>
 </template>
 
 <style lang="scss" scoped>

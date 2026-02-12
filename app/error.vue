@@ -29,15 +29,16 @@ const handleError = () => {
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.error-page
-  .content
-    h1 404
-    p 哎呀！您要找的頁面不存在。
-    p(v-if="error") (錯誤代碼: {{ error.statusCode }})
-    
-    //- 按鈕區
-    el-button(type="primary" @click="handleError") 回到首頁
+<template>
+  <div id="ErrorPage" class="error-page">
+    <div class="content">
+      <h1>404</h1>
+      <p>哎呀！您要找的頁面不存在。</p>
+      <p v-if="error">(錯誤代碼: {{ error.statusCode }})</p>
+
+      <el-button type="primary" @click="handleError">回到首頁</el-button>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

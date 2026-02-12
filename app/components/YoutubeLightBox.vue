@@ -48,27 +48,44 @@ const toggleModal = () => (isModalOpen.value = !isModalOpen.value);
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.yt-lightbox-container(v-if="videoId")
-  //- 預覽卡片
-  .video-card(@click="toggleModal")
-    img.thumb-img(:src="thumbnailUrl", alt="Youtube Thumbnail")
-    .play-overlay
-      .play-button
+<template>
+  <div v-if="videoId" class="yt-lightbox-container">
+    <div class="video-card" @click="toggleModal">
+      <img :src="thumbnailUrl" alt="Youtube Thumbnail" class="thumb-img" />
+      <div class="play-overlay">
+        <div class="play-button"></div>
+      </div>
+    </div>
 
-  //- 燈箱彈窗
-  Teleport(to="body")
-    Transition(name="fade")
-      .modal-backdrop(v-if="isModalOpen", @click.self="toggleModal")
-        .modal-body
-          button.close-x(@click="toggleModal") &times;
-          .iframe-container
-            iframe(
-              :src="embedUrl",
-              frameborder="0",
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-              allowfullscreen
-            )
+    <Teleport to="body">
+      <Transition name="fade">
+        <div
+          v-if="isModalOpen"
+          class="modal-backdrop"
+          @click.self="toggleModal"
+        >
+          <div class="modal-body">
+            <button class="close-x" @click="toggleModal">&times;</button>
+            <div class="iframe-container">
+              <iframe
+                :src="embedUrl"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
+  </div>
 </template>
 
 <style lang="scss" scoped>

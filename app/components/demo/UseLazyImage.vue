@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup>
 /*  LazyImage 使用方法 **/
 // 方法
 import { ref } from "vue";
 // 組件
-import LazyImage from "@/components/common/LazyImage.vue";
+import LazyImage from "@/components/LazyImage.vue";
 // !實例化 --------------------------------------------------------------------------------------------
 
 // !資料 --------------------------------------------------------------------------------------------
@@ -32,24 +32,21 @@ const photoList = ref([
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.gallery-container
-  .grid-layout
-    //- 使用 v-for 渲染每一張
-    .card(v-for="item in photoList" :key="item.id")
-      //- 核心：使用 LazyImage
-      //- 設定 1:1 的比例 (aspect-ratio="1/1") 非常重要，能確保 grid 不會跑版
-      LazyImage(
-        :src="item.url" 
-        bg-color="#fff"
-        aspect-ratio="1/1"
-        radius="10px"
-      )
-        template(#loading)
-          //- 這裡放白色的 Loading 內容
-          .loading-content
-            .spinner
-            span(style="color: black") 讀取中...
+<template>
+  <div class="gallery-container">
+    <div class="grid-layout">
+      <div v-for="item in photoList" :key="item.id" class="card">
+        <LazyImage :src="item.url" bg-color="#fff" aspect-ratio="1/1" radius="10px">
+          <template #loading>
+            <div class="loading-content">
+              <div class="spinner"></div>
+              <span style="color: black">讀取中...</span>
+            </div>
+          </template>
+        </LazyImage>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -108,15 +108,21 @@ const titleMapComputed = computed(() => titleMap[activeName.value] ?? "None");
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  #DEMO
-    div(class="flex justify-between items-center")
-      div(class="text-2xl mb-4") 封裝組件說明 - {{ titleMapComputed }}
-      NuxtLink(:to="localePath('index')")
-        el-button(type="primary") 退回首頁
-    el-tabs(v-model="activeName")
-      el-tab-pane(v-for="item in tabData" :key="item.id" :label="item.label" :name="item.name")
-        component(:is="item.components")
+<template>
+  <div id="Demo">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl mb-4">封裝組件說明 - {{ titleMapComputed }}</div>
+      <NuxtLink :to="localePath('index')">
+        <el-button type="primary">退回首頁</el-button>
+      </NuxtLink>
+    </div>
+
+    <el-tabs v-model="activeName">
+      <el-tab-pane v-for="item in tabData" :key="item.id" :label="item.label" :name="item.name">
+        <component :is="item.components" />
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 
 <style lang="scss" scoped>

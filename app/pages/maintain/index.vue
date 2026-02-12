@@ -35,10 +35,11 @@ definePageMeta({
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  #Maintain
-    Breadcrumb
-    div 網頁維護中
+<template>
+  <div id="MainTain">
+    <Breadcrumb />
+    <div>網頁維護中</div>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

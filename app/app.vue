@@ -20,10 +20,12 @@
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  #App
-    NuxtLayout
-      NuxtPage
+<template>
+  <div id="App">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
 <style lang="scss" scoped>

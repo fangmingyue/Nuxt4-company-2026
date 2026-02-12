@@ -35,9 +35,10 @@ definePageMeta({
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-#about
-  div about view
+<template>
+  <div id="About">
+    <div>about view</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

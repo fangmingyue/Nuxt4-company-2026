@@ -70,30 +70,29 @@ watch(
 );
 </script>
 
-<template lang="pug">
-.lazy-image-container(ref="containerRef" :style="styleProps")
-  
-  //- 1. Loading 層
-  //- 移除 v-if，改用 class 控制透明度
-  //- 這樣 DOM 永遠存在，保證一開始一定看得到
-  .loading-layer(:class="{ 'is-hidden': isLoaded || isError }")
-    slot(name="loading")
-      .default-spinner
+<template>
+  <div ref="containerRef" class="lazy-image-container" :style="styleProps">
+    <div class="loading-layer" :class="{ 'is-hidden': isLoaded || isError }">
+      <slot name="loading">
+        <div class="default-spinner"></div>
+      </slot>
+    </div>
 
-  //- 2. Image 層
-  img.lazy-img(
-    v-if="currentSrc"
-    ref="imgRef"
-    :src="currentSrc"
-    :alt="alt"
-    @load="handleLoad"
-    @error="handleError"
-    :class="{ 'visible': isLoaded }"
-  )
-  
-  //- 3. Error 層
-  .error-overlay(v-if="isError")
-      slot(name="error")
+    <img
+      v-if="currentSrc"
+      ref="imgRef"
+      :src="currentSrc"
+      :alt="alt"
+      class="lazy-img"
+      :class="{ visible: isLoaded }"
+      @load="handleLoad"
+      @error="handleError"
+    />
+
+    <div v-if="isError" class="error-overlay">
+      <slot name="error"></slot>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

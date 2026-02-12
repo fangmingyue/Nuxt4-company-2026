@@ -20,9 +20,10 @@
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  .header
-    div.container header
+<template>
+  <div class="header">
+    <div class="container">header</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

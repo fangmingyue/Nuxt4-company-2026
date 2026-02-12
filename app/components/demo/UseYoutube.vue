@@ -1,15 +1,13 @@
-<script setup lang="ts">
+<script setup>
 /* Youtube 使用方法 **/
 // 方法
 import { ref } from "vue";
 // 組件
-import YoutubeLightbox from "@/components/common/YoutubeLightBox.vue";
+import YoutubeLightbox from "@/components/YoutubeLightBox.vue";
 // !實例化 --------------------------------------------------------------------------------------------
 
 // !資料 --------------------------------------------------------------------------------------------
-const myUrl = ref(
-  "https://www.youtube.com/watch?v=9nn0SW4uw1U&list=RDEMpghYcV_ik&index=3"
-);
+const myUrl = ref("https://www.youtube.com/watch?v=9nn0SW4uw1U&list=RDEMpghYcV_ik&index=3");
 // !computed ---------------------------------------------------------------------------------------
 
 // !事件函數 -----------------------------------------------------------------------------------------
@@ -23,8 +21,8 @@ const myUrl = ref(
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  YoutubeLightbox(:url="myUrl")
+<template>
+  <YoutubeLightbox :url="myUrl" />
 </template>
 
 <style lang="scss" scoped></style>

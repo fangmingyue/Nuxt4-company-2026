@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 /* Icon 使用方法 **/
 /* Icon(name="mdi:home" size="24" color="blue") */
 // 方法
@@ -37,9 +37,10 @@
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-  div(class="flex items-center")
-    Icon(name="mdi:home" size="24" color="blue")
+<template>
+  <div class="flex items-center">
+    <Icon name="mdi:home" size="24" color="blue" />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

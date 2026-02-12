@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 /* 輪播圖 使用方法 **/
 import "vue3-carousel/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
@@ -11,18 +11,21 @@ const carouselConfig = {
 };
 </script>
 
-<template lang="pug">
-//- 外層容器
-.fullscreen-wrapper
-  Carousel(v-bind="carouselConfig")
-    Slide(v-for="i in 5" :key="i")
-      //- 這裡模擬圖片或內容容器
-      .slide-content 
-        h1 SLIDE {{ i }}
-    
-    template(#addons)
-      Pagination
-      Navigation
+<template>
+  <div class="fullscreen-wrapper">
+    <Carousel v-bind="carouselConfig">
+      <Slide v-for="i in 5" :key="i">
+        <div class="slide-content">
+          <h1>SLIDE {{ i }}</h1>
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Pagination />
+        <Navigation />
+      </template>
+    </Carousel>
+  </div>
 </template>
 
 <style lang="scss" scoped>

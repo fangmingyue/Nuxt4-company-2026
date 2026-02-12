@@ -30,14 +30,18 @@ const changeLang = (lang) => {
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-.i18n
-  el-button(type="primary" @click.prevent="changeLang('en')") 切換英文
-  el-button(type="primary" @click.prevent="changeLang('tw')") 切換繁體
-  div(class="my-4") {{$t('hello')}}
-  div(class="mb-2") 動態頁面跳轉
-  NuxtLink(:to="localePath({ name: 'demo-id', params: { id: id } })")
-    el-button(type="info") 動態跳轉
+<template>
+  <div class="i18n">
+    <el-button type="primary" @click.prevent="changeLang('en')">切換英文</el-button>
+    <el-button type="primary" @click.prevent="changeLang('tw')">切換繁體</el-button>
+
+    <div class="my-4">{{ $t("hello") }}</div>
+    <div class="mb-2">動態頁面跳轉</div>
+
+    <NuxtLink :to="localePath({ name: 'demo-id', params: { id: id } })">
+      <el-button type="info">動態跳轉</el-button>
+    </NuxtLink>
+  </div>
 </template>
 
 <style lang="scss" scoped>

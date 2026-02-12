@@ -34,13 +34,14 @@ const handNewsCategory = async () => {
 // !watch -------------------------------------------------------------------------------------------
 </script>
 
-<template lang="pug">
-el-button(@click="handNewsCategory") add
-//- div(class="border p-4") {{ data }}
-//- div(v-for="item in categoryData?.data?.payload")
-//-   span(class="mr-4") {{ item.title }}
-//-   span(class="mr-4") {{ item.url}}
-//-   span(class="mr-4") {{ item.has_children}}
+<template>
+  <el-button @click="handNewsCategory">add</el-button>
+
+  <div v-for="item in categoryData?.data?.payload" :key="item.url">
+    <span class="mr-4">{{ item.title }}</span>
+    <span class="mr-4">{{ item.url }}</span>
+    <span class="mr-4">{{ item.has_children }}</span>
+  </div>
 </template>
 
 <style lang="scss" scoped>
