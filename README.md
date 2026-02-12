@@ -1,0 +1,14 @@
+vue ^3.5.26
+element-plus/nuxt ^1.1.4
+tailwindcss ^4.1.18
+i18n (尚未安裝)
+pug ^3.0.3
+vue3-carousel ^0.17.0
+axios ^1.13.2
+iconfy ^5.0.0
+@pinia/nuxt: ^0.11.3
+router ^4.6.4
+sass ^1.97.2
+lodash ^4.17.21
+gsap ^3.14.2
+pinia-plugin-persistedstate ^4.7.1

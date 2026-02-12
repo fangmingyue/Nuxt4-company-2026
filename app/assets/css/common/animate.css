@@ -1,0 +1,89 @@
+/* assets/css/animations.css */
+/*
+* 使用說明表
+* 指令寫法	          對應動畫	預設行為	   可調整參數 (Object key)
+* v-animate:float-y	上下浮動	 3s,-20px	   time, dist, delay
+* v-animate:float-x	左右浮動	 3s,20px	   time, dist, delay
+* v-animate:swing	  左右搖擺	 3s,5deg	   time, deg, delay
+* v-animate:pulse	  大小縮放	 3s,1.05	   time, scale, delay
+* v-animate:spin	  自轉	    3s,360deg	  time, deg, delay
+*/
+
+/* --- 1. 定義動畫 (Keyframes) --- */
+
+/* [float-y] 上下浮動 (預設) */
+@keyframes anim-float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--a-dist, -20px));
+  }
+}
+
+/* [float-x] 左右浮動 */
+@keyframes anim-float-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--a-dist, 20px));
+  }
+}
+
+/* [swing] 左右旋轉/搖擺 */
+@keyframes anim-swing {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(var(--a-deg, 5deg));
+  }
+  75% {
+    transform: rotate(calc(var(--a-deg, 5deg) * -1));
+  }
+}
+
+/* [pulse] 呼吸/縮放效果 */
+@keyframes anim-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(var(--a-scale, 1.05));
+  }
+}
+
+/* [spin] 360度持續旋轉 */
+@keyframes anim-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- 2. 核心 Class 封裝 --- */
+.v-anim-active {
+  /* 動畫名稱由變數 --a-name 決定
+     時間由 --a-dur 決定 (預設 3s)
+     樣式固定為 infinite (無限循環)
+  */
+  animation: var(--a-name) var(--a-dur, 3s) ease-in-out infinite;
+
+  /* 預設延遲 */
+  animation-delay: var(--a-delay, 0s);
+
+  /* 效能優化 */
+  will-change: transform;
+}
+
+/* 針對 spin 旋轉，通常是線性的，不需要忽快忽慢 */
+.v-anim-active[data-anim="spin"] {
+  animation-timing-function: linear;
+}

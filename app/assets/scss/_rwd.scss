@@ -1,0 +1,26 @@
+@use "sass:map";
+
+$breakpoints: (
+  "xxs": 360px,
+  "xs": 480px,
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1440px,
+  "3xl": 1800px,
+);
+
+@mixin rwd($size) {
+  // ✨ 關鍵修改：使用插值語法 #{} 將 $size 強制轉為字串
+  // 這樣即使傳入的是無引號的 2xl，也會被轉成字串 "2xl" 來進行比對
+  $width: map.get($breakpoints, "#{$size}");
+
+  @if $width {
+    @media (max-width: $width) {
+      @content;
+    }
+  } @else {
+    @warn "⚠️ 沒有定義這個斷點：`#{$size}`。";
+  }
+}

@@ -1,0 +1,5 @@
+// 移除字型預設高度留白
+%useBoxTrim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic; /* 上對 cap、下對 alphabetic 基線 */
+}

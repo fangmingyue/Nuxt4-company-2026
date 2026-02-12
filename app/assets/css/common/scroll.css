@@ -1,0 +1,39 @@
+/* assets/css/animations.css */
+
+/* --- 1. 初始狀態 (隱藏、位移) --- */
+[data-scroll] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+
+  /* 預設初始位置：往下偏移 30px */
+  transform: translateY(30px);
+
+  /* 讀取 JS 傳來的延遲時間，預設 0 */
+  transition-delay: var(--delay, 0ms);
+}
+
+/* --- 2. 各種方向的初始位置 --- */
+[data-scroll="fade-up"] {
+  transform: translateY(30px);
+}
+[data-scroll="fade-down"] {
+  transform: translateY(-30px);
+}
+[data-scroll="fade-left"] {
+  transform: translateX(30px);
+}
+[data-scroll="fade-right"] {
+  transform: translateX(-30px);
+}
+[data-scroll="zoom-in"] {
+  transform: scale(0.9);
+}
+
+/* --- 3. 觸發狀態 (顯示、歸位) --- */
+[data-scroll].v-show {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}

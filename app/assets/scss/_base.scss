@@ -1,0 +1,33 @@
+@use "./rwd.scss" as *;
+
+// 預設自動寬度
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include rwd(3xl) {
+    padding: 0 20px;
+  }
+  @include rwd(2xl) {
+    padding: 0 20px;
+  }
+  @include rwd(xl) {
+    padding: 0 20px;
+  }
+  @include rwd(lg) {
+    padding: 0 16px;
+  }
+  @include rwd(md) {
+    padding: 0 16px;
+  }
+  @include rwd(sm) {
+    padding: 0 16px;
+  }
+  @include rwd(xs) {
+    padding: 0 16px;
+  }
+  @include rwd(xxs) {
+    padding: 0 16px;
+  }
+}

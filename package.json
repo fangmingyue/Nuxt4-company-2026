@@ -1,0 +1,38 @@
+{
+  "name": "nuxt4-base-2026",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@element-plus/nuxt": "^1.1.4",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxt/image": "^2.0.0",
+    "@nuxt/ui": "^4.4.0",
+    "@nuxtjs/i18n": "^10.2.1",
+    "@nuxtjs/robots": "^5.7.0",
+    "@nuxtjs/sitemap": "^7.6.0",
+    "@pinia/nuxt": "^0.11.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "axios": "^1.13.4",
+    "element-plus": "^2.13.1",
+    "lodash": "^4.17.23",
+    "nuxt": "^4.3.0",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "pug": "^3.0.3",
+    "sass": "^1.97.3",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4",
+    "vue3-carousel": "^0.17.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.2.0"
+  }
+}
