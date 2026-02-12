@@ -8,7 +8,7 @@ import UseFetch from "@/components/demo/UseFetch.vue";
 import UseIcon from "@/components/demo/UseIcon.vue";
 import UseCarousel from "@/components/demo/UseCarousel.vue";
 import UseYoutube from "@/components/demo/UseYoutube.vue";
-import UseLazyImage from "@/components/demo/UseLazyImage.vue";
+import UseImageLazy from "@/components/demo/UseImageLazy.vue";
 import UseI18n from "@/components/demo/UseI18n.vue";
 import UseAnimate from "@/components/demo/UseAnimate.vue";
 // !實例化 --------------------------------------------------------------------------------------------
@@ -64,9 +64,9 @@ const tabData = [
   },
   {
     id: 6,
-    label: "useLazyImage",
+    label: "useImageLazy",
     name: "sixth",
-    components: UseLazyImage,
+    components: UseImageLazy,
   },
   {
     id: 7,

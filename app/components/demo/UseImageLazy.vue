@@ -1,9 +1,9 @@
 <script setup>
-/*  LazyImage 使用方法 **/
+/*  ImageLazy 使用方法 **/
 // 方法
 import { ref } from "vue";
 // 組件
-import LazyImage from "@/components/LazyImage.vue";
+import ImageLazy from "@/components/ImageLazy.vue";
 // !實例化 --------------------------------------------------------------------------------------------
 
 // !資料 --------------------------------------------------------------------------------------------
@@ -36,14 +36,14 @@ const photoList = ref([
   <div class="gallery-container">
     <div class="grid-layout">
       <div v-for="item in photoList" :key="item.id" class="card">
-        <LazyImage :src="item.url" bg-color="#fff" aspect-ratio="1/1" radius="10px">
+        <ImageLazy :src="item.url" bg-color="#fff" aspect-ratio="1/1" radius="10px">
           <template #loading>
             <div class="loading-content">
               <div class="spinner"></div>
               <span style="color: black">讀取中...</span>
             </div>
           </template>
-        </LazyImage>
+        </ImageLazy>
       </div>
     </div>
   </div>
