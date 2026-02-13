@@ -19,3 +19,15 @@
   text-box-trim: trim-end;
   text-box-edge: cap alphabetic;
 }
+
+//!================================================================================
+//! position 繼承
+//!================================================================================
+
+// 區塊置中
+%usePositionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

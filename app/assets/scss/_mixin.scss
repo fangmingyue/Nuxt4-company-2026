@@ -1,0 +1,80 @@
+//!================================================================================
+//! Fonts 混和
+//!================================================================================
+
+/*
+* 文字自適應
+* color:顏色 / fontFamily:字型 / fontWeight:字重 / lineHeight:行高 / min:最小值 / max:最大值 / rwd:螢幕寬度對照(手機板用768)
+* @include fontClampPc() <-都不寫是預設
+* @include fontClampPc($min:20, $max:50) <-只針對大小屬性
+* @include fontClampPc(#aaa, 'sans-serif', $min: 24, $max: 60); <-全部都寫
+*/
+@mixin fontClamp(
+  $color: inherit,
+  $fontFamily: inherit,
+  $fontWeight: 400,
+  $lineHeight: 24,
+  $min: 20,
+  $max: 50,
+  $rwd: 1920
+) {
+  color: $color;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  line-height: $lineHeight + "px";
+  font-size: clamp(#{$min}px, calc(#{$max} / #{$rwd} * 100vw), #{$max}px);
+}
+
+/*
+* 文字溢出省略
+* 說明 : 超出設定行數將變成...
+* @inlcude fontEllipsis(2)
+*/
+
+@mixin fontEllipsis($line: 1) {
+  @if $line == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+//!================================================================================
+//! flex 混和
+//!================================================================================
+
+/*
+* flex布局
+* @inlcude flex()
+*/
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+//!================================================================================
+//! 其他 混和
+//!================================================================================
+
+/*
+* 區塊(px % vw)
+* 說明 : $width:寬度 / $height:高度 / $backgroundColor:背景顏色 / $borderRadius:圓角
+* 說明 : // 處理圓角：如果是數字則補 px，如果有單位（如 %）則直接用
+* @include shape(20, 20, red, 5)
+* @include shape(100%, 50px, blue, 50%);
+*/
+
+@mixin shape($width, $height, $backgroundColor, $borderRadius: 0) {
+  width: if(unitless($width), #{$width}px, $width);
+  height: if(unitless($height), #{$height}px, $height);
+  background-color: $backgroundColor;
+  border-radius: if(unitless($borderRadius), #{$borderRadius}px, $borderRadius);
+}

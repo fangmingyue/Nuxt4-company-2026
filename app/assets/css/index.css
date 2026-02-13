@@ -1,8 +1,10 @@
+@import "./common/reset.css";
+@import "./common/root.css";
+@import "./common/scroll.css";
+@import "./common/animate.css";
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-@import "./common/root.css";
-@import "./common/scroll.css";
-@import "./common/animate.css";
