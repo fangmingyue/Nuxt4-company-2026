@@ -35,7 +35,6 @@ const handleError = () => {
       <h1>404</h1>
       <p>哎呀！您要找的頁面不存在。</p>
       <p v-if="error">(錯誤代碼: {{ error.statusCode }})</p>
-
       <el-button type="primary" @click="handleError">回到首頁</el-button>
     </div>
   </div>

@@ -1,5 +1,4 @@
 import { fileURLToPath } from "node:url";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -15,7 +14,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/index.css"],
   // 引入外掛插件
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [],
     css: {
       preprocessorOptions: {
         scss: {

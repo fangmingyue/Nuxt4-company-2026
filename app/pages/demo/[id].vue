@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <div class="demo container">
+  <div class="">
     <div>動態載入的頁面</div>
   </div>
 </template>

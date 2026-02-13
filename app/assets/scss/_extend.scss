@@ -1,5 +1,21 @@
-// 移除字型預設高度留白
-%useBoxTrim {
+//!================================================================================
+//! Fonts 繼承
+//!================================================================================
+
+// 移除字型預設上下高度留白
+%useBoxTrimBoth {
   text-box-trim: trim-both;
-  text-box-edge: cap alphabetic; /* 上對 cap、下對 alphabetic 基線 */
+  text-box-edge: cap alphabetic;
+}
+
+// 移除字型預設上高度留白
+%useBoxTrimStart {
+  text-box-trim: trim-start;
+  text-box-edge: cap alphabetic;
+}
+
+// 移除字型預設下高度留白
+%useBoxTrimEnd {
+  text-box-trim: trim-end;
+  text-box-edge: cap alphabetic;
 }

@@ -31,7 +31,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div id="Home" class="container">
+  <div id="Home">
     <NuxtLink :to="localePath('demo')">
       <el-button type="primary">to demo</el-button>
     </NuxtLink>

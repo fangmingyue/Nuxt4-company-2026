@@ -22,7 +22,7 @@ useGsap(boxRef, { x: 200, rotation: 360, scale: 0.5, duration: 1, repeat: -1, yo
 </script>
 
 <template>
-  <div ref="boxRef" class="box w-20 h-20 bg-blue-500 rounded-4xl"></div>
+  <div ref="boxRef"></div>
 </template>
 
 <style lang="scss" scoped></style>

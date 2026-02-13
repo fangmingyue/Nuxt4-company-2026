@@ -35,8 +35,8 @@ const changeLang = (lang) => {
     <el-button type="primary" @click.prevent="changeLang('en')">切換英文</el-button>
     <el-button type="primary" @click.prevent="changeLang('tw')">切換繁體</el-button>
 
-    <div class="my-4">{{ $t("hello") }}</div>
-    <div class="mb-2">動態頁面跳轉</div>
+    <div>{{ $t("hello") }}</div>
+    <div>動態頁面跳轉</div>
 
     <NuxtLink :to="localePath({ name: 'demo-id', params: { id: id } })">
       <el-button type="info">動態跳轉</el-button>

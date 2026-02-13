@@ -38,9 +38,9 @@ const handNewsCategory = async () => {
   <el-button @click="handNewsCategory">add</el-button>
 
   <div v-for="item in categoryData?.data?.payload" :key="item.url">
-    <span class="mr-4">{{ item.title }}</span>
-    <span class="mr-4">{{ item.url }}</span>
-    <span class="mr-4">{{ item.has_children }}</span>
+    <span>{{ item.title }}</span>
+    <span>{{ item.url }}</span>
+    <span>{{ item.has_children }}</span>
   </div>
 </template>
 

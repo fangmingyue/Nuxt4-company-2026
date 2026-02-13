@@ -110,8 +110,8 @@ const titleMapComputed = computed(() => titleMap[activeName.value] ?? "None");
 
 <template>
   <div id="Demo">
-    <div class="flex justify-between items-center">
-      <div class="text-2xl mb-4">封裝組件說明 - {{ titleMapComputed }}</div>
+    <div class="">
+      <div class="">封裝組件說明 - {{ titleMapComputed }}</div>
       <NuxtLink :to="localePath('index')">
         <el-button type="primary">退回首頁</el-button>
       </NuxtLink>
